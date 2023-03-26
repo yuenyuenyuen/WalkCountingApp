@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -26,6 +27,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -33,6 +37,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:+'
     implementation 'com.google.android.material:material:+'
     implementation 'androidx.constraintlayout:constraintlayout:+'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:+'
     androidTestImplementation 'androidx.test.espresso:espresso-core:+'
