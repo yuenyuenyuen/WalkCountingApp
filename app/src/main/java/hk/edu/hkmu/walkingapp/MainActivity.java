@@ -3,6 +3,7 @@ package hk.edu.hkmu.walkingapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
@@ -10,6 +11,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -101,6 +103,7 @@ private TextView walkingText;
         startActivity(intent);
     }
     public void openInfoMenu(){
+        stepCount+=10000;
         InfoDialog infoDialog = new InfoDialog();
         infoDialog.show(getSupportFragmentManager(), "info dialog");
     }
@@ -109,6 +112,45 @@ private TextView walkingText;
         startActivity(intent);
     }
     public void openLanguageMenu(){
+        stepCount+=10000;
+        Dialog languageDialog = new Dialog(MainActivity.this,R.style.CustomDialogTheme);
+        LayoutInflater layoutInflater = this.getLayoutInflater();
+        View language_dialog = layoutInflater.inflate(R.layout.language_dialog, null);
+
+        Button TcnButton = language_dialog.findViewById(R.id.TCN);
+        Button ScnButton = language_dialog.findViewById(R.id.SCN);
+        Button EngButton = language_dialog.findViewById(R.id.ENG);
+        LanguageManager langmgr = new LanguageManager(this);
+
+        TcnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                langmgr.updateResource("zh_hk");
+                recreate();
+            }
+        });
+
+        ScnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                langmgr.updateResource("zh_cn");
+                recreate();
+            }
+        });
+
+        EngButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                langmgr.updateResource("en");
+                recreate();
+            }
+        });
+
+        languageDialog.setContentView(language_dialog);
+
+        languageDialog.setTitle("Select Language");
+
+        languageDialog.show();
 
     }
 

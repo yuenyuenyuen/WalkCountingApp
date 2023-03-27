@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">走路程式</string>
+    <string name="title_activity_google_map">Google Map</string>
+
+    <string name="todaywalk">今日行左:</string>
+    <string name="record">紀錄</string>
+    <string name="info">資訊</string>
+    <string name="language">語言</string>
+    <string name="googlemap">Google Map</string>
+    <string name="tranditionalchinese">繁體中文</string>
+    <string name="simplifliedchinese">簡體中文</string>
+    <string name="english">英文</string>
+</resources>
