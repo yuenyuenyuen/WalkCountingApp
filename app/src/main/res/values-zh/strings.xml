@@ -4,6 +4,8 @@
     <string name="title_activity_google_map">搜狗地图活动</string>
 
     <string name="todaywalk">今天走了:</string>
+    <string name="km">公里</string>
+
     <string name="record">纪录</string>
     <string name="info">资讯</string>
     <string name="language">语言</string>

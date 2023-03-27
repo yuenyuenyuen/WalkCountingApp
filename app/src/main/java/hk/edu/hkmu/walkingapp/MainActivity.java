@@ -4,17 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.lang.reflect.Field;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,10 +30,14 @@ private CardView InfoButton;
 private CardView GoogleMapButton;
 private CardView LanguageButton;
 private TextView walkingText;
+private TextView kmText;
 
     private double MagnitudePreview = 0;
-    private Integer stepCount = 10000;
+    private Integer stepCount = 0;
     private double walkCountOnKM;
+
+    Context context;
+    Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +45,7 @@ private TextView walkingText;
         setContentView(R.layout.activity_main);
         //Control Walking km Text;
         walkingText = findViewById(R.id.todaykm);
-
+        kmText = findViewById(R.id.km);
 
         SensorManager sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -58,7 +69,7 @@ private TextView walkingText;
                     }
                     walkCountOnKM = stepCount*0.65*0.001;
                     String walkCountOnKMText = Double.toString(Math.round(walkCountOnKM));
-                    walkingText.setText("Today Walk: \n"+walkCountOnKMText+"km");
+                    kmText.setText(walkCountOnKMText+"km");
                     //walkingText.setText(stepCount+"km");
                 }
             }
@@ -103,7 +114,6 @@ private TextView walkingText;
         startActivity(intent);
     }
     public void openInfoMenu(){
-        stepCount+=10000;
         InfoDialog infoDialog = new InfoDialog();
         infoDialog.show(getSupportFragmentManager(), "info dialog");
     }
@@ -112,7 +122,6 @@ private TextView walkingText;
         startActivity(intent);
     }
     public void openLanguageMenu(){
-        stepCount+=10000;
         Dialog languageDialog = new Dialog(MainActivity.this,R.style.CustomDialogTheme);
         LayoutInflater layoutInflater = this.getLayoutInflater();
         View language_dialog = layoutInflater.inflate(R.layout.language_dialog, null);
@@ -120,29 +129,29 @@ private TextView walkingText;
         Button TcnButton = language_dialog.findViewById(R.id.TCN);
         Button ScnButton = language_dialog.findViewById(R.id.SCN);
         Button EngButton = language_dialog.findViewById(R.id.ENG);
-        LanguageManager langmgr = new LanguageManager(this);
 
         TcnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                langmgr.updateResource("zh_hk");
-                recreate();
+
+                changeLanguage("zh", "HK");
+                languageDialog.dismiss();
             }
         });
 
         ScnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                langmgr.updateResource("zh_cn");
-                recreate();
+                changeLanguage("zh", "CN");
+                languageDialog.dismiss();
             }
         });
 
         EngButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                langmgr.updateResource("en");
-                recreate();
+                changeLanguage("en", "AS");
+                languageDialog.dismiss();
             }
         });
 
@@ -170,4 +179,16 @@ private TextView walkingText;
             SharedPreferences sharedPreferences = getPreferences(MODE_PRIVATE);
             stepCount = sharedPreferences.getInt("stepCount", stepCount);
         }
+
+    public void changeLanguage(String lan, String con) {
+        Locale locale = new Locale(lan, con);
+        Locale.setDefault(locale);
+        Resources resources = getResources();
+        Configuration configuration = resources.getConfiguration();
+        configuration.locale = locale;
+        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
 }

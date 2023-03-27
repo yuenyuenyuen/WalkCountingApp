@@ -10,26 +10,18 @@
         android:id="@+id/firstgrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:columnCount="2"
-        android:rowCount="1">
+        android:layout_centerHorizontal="true">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
             android:layout_gravity="fill"
             app:cardBackgroundColor="@android:color/holo_blue_dark"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
-
             app:cardUseCompatPadding="true">
-
             <ImageView
                 android:layout_width="?attr/minTouchTargetSize"
                 android:layout_height="?attr/minTouchTargetSize"
@@ -39,21 +31,38 @@
                 android:scaleY="2"
                 android:src="@drawable/runningicon" />
 
-            <TextView
-                android:id="@+id/todaykm"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginStart="12dp"
+                <TextView
+                    android:id="@+id/todaykm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:gravity = "top|end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="25dp"
+                    android:autoSizeMaxTextSize="35sp"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/todaywalk"
+                    android:textColor="#4C4C4C"
+                    android:textSize="45sp"
+                    android:textStyle="bold"/>
 
-                android:layout_gravity="center_vertical|right"
-                android:autoSizeMaxTextSize="42sp"
-                android:autoSizeMinTextSize="10sp"
-                android:autoSizeTextType="uniform"
-                android:text="@string/todaywalk"
-                android:textColor="#4C4C4C"
-                android:textSize="45sp"
-                android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/km"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right|bottom"
+                    android:gravity = "bottom|end"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="10dp"
+                    android:autoSizeMaxTextSize="35sp"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeTextType="uniform"
+                    android:text="1km"
+                    android:textColor="#4C4C4C"
+                    android:textSize="45sp"
+                    android:textStyle="bold" />
+
         </androidx.cardview.widget.CardView>
     </GridLayout>
 

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "hk.edu.hkmu.walkingapp"
-        minSdk 28
+        minSdk 19
         targetSdk 33
         versionCode 1
         versionName "1.0"

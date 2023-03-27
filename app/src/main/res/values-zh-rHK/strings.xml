@@ -4,6 +4,7 @@
     <string name="title_activity_google_map">Google Map</string>
 
     <string name="todaywalk">今日行左:</string>
+    <string name="km">公里</string>
     <string name="record">紀錄</string>
     <string name="info">資訊</string>
     <string name="language">語言</string>

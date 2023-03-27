@@ -2,6 +2,7 @@
     <string name="app_name">WalkingApp</string>
     <string name="title_activity_google_map">GoogleMapActivity</string>
     <string name="todaywalk">Today Walk</string>
+    <string name="km">km</string>
     <string name="record">Record</string>
     <string name="info">Info</string>
     <string name="language">Languages</string>
