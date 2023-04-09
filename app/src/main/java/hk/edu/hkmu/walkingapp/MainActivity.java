@@ -118,7 +118,7 @@ private TextView kmText;
         infoDialog.show(getSupportFragmentManager(), "info dialog");
     }
     public void openGoogleMapActivity(){
-        Intent intent = new Intent(this, RecordActivity.class);
+        Intent intent = new Intent(this, GoogleMapActivity.class);
         startActivity(intent);
     }
     public void openLanguageMenu(){
