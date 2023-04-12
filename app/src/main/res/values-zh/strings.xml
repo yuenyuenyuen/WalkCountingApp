@@ -2,15 +2,24 @@
 <resources>
     <string name="app_name">走路程式</string>
     <string name="title_activity_google_map">搜狗地图活动</string>
-
     <string name="todaywalk">今天走了:</string>
     <string name="km">公里</string>
-
     <string name="record">纪录</string>
     <string name="info">资讯</string>
     <string name="language">语言</string>
     <string name="googlemap">搜狗地图</string>
+    <string name="localpos">实时位置</string>
+    <string name="lattitude">纬度: </string>
+    <string name="longitude">经度: </string>
+    <string name="address">地址: </string>
+    <string name="city">城市: </string>
+    <string name="country">国家: </string>
     <string name="tranditionalchinese">繁体中文</string>
     <string name="simplifliedchinese">简体中文</string>
     <string name="english">英文</string>
+    <string name="infocontent">此应用由以下学生编写:\n\n袁承康\n吴家祺\n曾钰婷\n王咏妍\n庄珮珊</string>
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">false</item>
+
+    </style>
 </resources>

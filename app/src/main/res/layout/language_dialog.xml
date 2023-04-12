@@ -14,7 +14,15 @@
         android:layout_height="wrap_content"
         android:columnCount="0"
         android:rowCount="3">
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/localpostitle"
+            android:text="@string/language"
+            android:textSize="25dp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
 
         <Button
             android:id="@+id/TCN"

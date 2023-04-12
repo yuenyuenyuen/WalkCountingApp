@@ -9,7 +9,18 @@
     <string name="info">資訊</string>
     <string name="language">語言</string>
     <string name="googlemap">Google Map</string>
+    <string name="localpos">即時位置</string>
+    <string name="lattitude">緯度: </string>
+    <string name="longitude">經度: </string>
+    <string name="address">地址: </string>
+    <string name="city">城市: </string>
+    <string name="country">國家: </string>
     <string name="tranditionalchinese">繁體中文</string>
     <string name="simplifliedchinese">簡體中文</string>
     <string name="english">英文</string>
+    <string name="infocontent">此應用由以下學生編寫:\n\n袁承康\n吳家祺\n曾鈺婷\n王詠妍\n莊珮珊</string>
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">false</item>
+
+    </style>
 </resources>

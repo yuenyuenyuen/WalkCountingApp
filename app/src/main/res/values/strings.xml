@@ -7,15 +7,15 @@
     <string name="info">Info</string>
     <string name="language">Languages</string>
     <string name="googlemap">Google Map</string>
+    <string name="localpos">Local Position</string>
     <string name="tranditionalchinese">Tranditional Chinese</string>
     <string name="simplifliedchinese">Simpliflied Chinese</string>
     <string name="english">English</string>
-
-
-    <style name="CustomDialogTheme" parent="Theme.AppCompat.Dialog">
-        <item name="android:windowNoTitle">false</item>
-        <item name="android:background">@android:color/holo_red_light</item>
-
-    </style>
+    <string name="lattitude">Lattitude:\ </string>
+    <string name="longitude">Longitude:\ </string>
+    <string name="address">Address:\ </string>
+    <string name="city">City:\ </string>
+    <string name="country">Country:\ </string>
+    <string name="infocontent">This Application is created by:\n\nYuen Shing Hong\nNg Ka Ki\nTsang Yuk Ting\nWong Wing Yin\nChong Pui Shan</string>
 
 </resources>
