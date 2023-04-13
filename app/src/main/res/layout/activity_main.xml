@@ -29,7 +29,7 @@
                 android:layout_gravity="center_vertical|left"
                 android:scaleX="2"
                 android:scaleY="2"
-                android:src="@drawable/runningicon" />
+                android:src="@drawable/runningicon"/>
 
                 <TextView
                     android:id="@+id/todaykm"

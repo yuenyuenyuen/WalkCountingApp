@@ -53,6 +53,8 @@ FusedLocationProviderClient fusedLocationProviderClient;
     private Integer stepCount = 0;
     private double walkCountOnKM;
 
+    public static int languagenum = 0;
+
     Context context;
     Resources resources;
 
@@ -81,7 +83,7 @@ FusedLocationProviderClient fusedLocationProviderClient;
                     double MagnitudeDelta = Magnitude - MagnitudePreview;
                     MagnitudePreview = Magnitude;
 
-                    if (MagnitudeDelta > 3) {
+                    if (MagnitudeDelta > 2) {
                         stepCount++;
                     }
                     walkCountOnKM = stepCount*0.65*0.001;
@@ -105,7 +107,7 @@ FusedLocationProviderClient fusedLocationProviderClient;
         RecordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                openRecordActivity();
+                openRecordList();
             }
         });
         InfoButton.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +133,7 @@ FusedLocationProviderClient fusedLocationProviderClient;
             }
         });
     }
-    public void openRecordActivity(){
+    public void openRecordList(){
         Intent intent = new Intent(this, RecordActivity.class);
         startActivity(intent);
     }
@@ -155,8 +157,8 @@ FusedLocationProviderClient fusedLocationProviderClient;
         TcnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 changeLanguage("zh", "HK");
+                languagenum = 1;
                 languageDialog.dismiss();
             }
         });
@@ -165,6 +167,7 @@ FusedLocationProviderClient fusedLocationProviderClient;
             @Override
             public void onClick(View view) {
                 changeLanguage("zh", "CN");
+                languagenum = 2;
                 languageDialog.dismiss();
             }
         });
@@ -173,6 +176,7 @@ FusedLocationProviderClient fusedLocationProviderClient;
             @Override
             public void onClick(View view) {
                 changeLanguage("en", "AS");
+                languagenum = 0;
                 languageDialog.dismiss();
             }
         });

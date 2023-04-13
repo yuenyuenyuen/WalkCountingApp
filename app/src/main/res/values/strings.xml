@@ -11,6 +11,10 @@
     <string name="tranditionalchinese">Tranditional Chinese</string>
     <string name="simplifliedchinese">Simpliflied Chinese</string>
     <string name="english">English</string>
+    <string name="route">Route: \n</string>
+    <string name="howtoaccess">How to Access: \n</string>
+    <string name="lattitudedis">Lattitude: \n</string>
+    <string name="longitudedis">Longitude: \n</string>
     <string name="lattitude">Lattitude:\ </string>
     <string name="longitude">Longitude:\ </string>
     <string name="address">Address:\ </string>

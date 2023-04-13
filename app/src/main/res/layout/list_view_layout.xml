@@ -2,12 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listview" />
+    android:orientation="vertical"
+    android:padding="10px">
 
     <TextView
         android:id="@+id/title"
@@ -35,8 +31,11 @@
         android:textColor="@color/black" />
     <ImageView
         android:id="@+id/mapurl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
     <TextView
         android:id="@+id/latitude"
         android:layout_width="match_parent"
@@ -47,4 +46,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/black" />
+
 </LinearLayout>

@@ -10,6 +10,10 @@
     <string name="language">語言</string>
     <string name="googlemap">Google Map</string>
     <string name="localpos">即時位置</string>
+    <string name="route">路線: </string>
+    <string name="howtoaccess">如何到達: </string>
+    <string name="lattitudedis">緯度: \n</string>
+    <string name="longitudedis">經度: \n</string>
     <string name="lattitude">緯度: </string>
     <string name="longitude">經度: </string>
     <string name="address">地址: </string>

@@ -9,6 +9,10 @@
     <string name="language">语言</string>
     <string name="googlemap">搜狗地图</string>
     <string name="localpos">实时位置</string>
+    <string name="route">路线: </string>
+    <string name="howtoaccess">如何到达: </string>
+    <string name="lattitudedis">纬度: \n</string>
+    <string name="longitudedis">经度: \n</string>
     <string name="lattitude">纬度: </string>
     <string name="longitude">经度: </string>
     <string name="address">地址: </string>
