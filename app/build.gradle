@@ -6,15 +6,14 @@ plugins {
 android {
     namespace 'hk.edu.hkmu.walkingapp'
     compileSdk 33
-    compileSdkPreview "UpsideDownCake"
 
     defaultConfig {
         applicationId "hk.edu.hkmu.walkingapp"
-        minSdk 19
+        minSdk 20
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,10 +35,11 @@ android {
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:+'
-    implementation 'com.google.android.material:material:+'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:+'
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'androidx.core:core-ktx:1.9.0'
+    implementation "androidx.multidex:multidex:2.0.1"
     implementation 'com.google.android.gms:play-services-location:21.0.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:+'
